@@ -2,6 +2,7 @@
 #folders to ignore
 #--------------------------
 build-vs2019-x64/
+.vs/
 
 
 
