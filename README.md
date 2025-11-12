@@ -21,7 +21,8 @@ Some examples to do mux and demux by using ffmpeg lib
     build:ffmpeg-examples/ReadMe.txt  
 
 ## gst-ffmpeg-evaluation
-evaulte the enocer, decoder performance of ffmeg and gst
+Compare the encoder and decoder performance of FFmpeg and GStreamer for various codecs.  
+
     code: gst-ffmpeg-evaluation/src
     build: gst-ffmpeg-evaluation/makeFiles
 	results: gst-ffmpeg-evaluation/doc
