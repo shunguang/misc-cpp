@@ -2,9 +2,9 @@
 ## evaluateEigen
 Evaluated the performance difference between eigen static and dynamic matrices.
 
-    code:  evaluateEigen/
+    code:  evaluateEigen/src
     build: evaluateEigen/build-readme.txt
-    result:evaluateEigen/Results.txt  
+    result:evaluateEigen/doc/Results.txt  
 
 ## mix
 Mixing baseband signal with carrier signal from both time-domain and freq-domain algorithms
