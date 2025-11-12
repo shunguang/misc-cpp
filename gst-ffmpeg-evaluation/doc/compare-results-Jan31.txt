@@ -1,0 +1,48 @@
+Jan 31
+
+A.	Encoding:
+
+FFMPEG4400 encName=mpeg4, PerFrameStatistics frmCnt=4390, wall(mu=43609, std=4684) (us), usrCpu(mu=42253, std=4600) (us), sysCpu(mu=907, std=681) (us)
+                                Total Time Used for decoding the whole seq:wall=207832(ms), usr_cpu=190910(ms), sys_cpu=13307(ms)
+FFMPEG500 encName=mpeg4, PerFrameStatistics frmCnt=452, wall(mu=46220, std=3791) (us), usrCpu(mu=44453, std=3837) (us), sysCpu(mu=852, std=1354) (us)
+                                Total Time Used for decoding the whole seq:wall=24267(ms), usr_cpu=22912(ms), sys_cpu=646(ms)
+
+FFMPEG4400 encName=libx264, PerFrameStatistics frmCnt=4390, wall(mu=62572, std=44851) (us), usrCpu(mu=233661, std=166090) (us), sysCpu(mu=1923, std=3078) (us)
+                                Total Time Used for decoding the whole seq:wall=299660(ms), usr_cpu=1093706(ms), sys_cpu=22559(ms)
+FFMPEG500 encName=libx264, PerFrameStatistics frmCnt=452, wall(mu=72949, std=48340) (us), usrCpu(mu=253603, std=161659) (us), sysCpu(mu=2167, std=3401) (us)
+                                Total Time Used for decoding the whole seq:wall=37634(ms), usr_cpu=128608(ms), sys_cpu=1861(ms)
+
+FFMPEG4400 encName=h264_nvmpi, PerFrameStatistics frmCnt=4390, wall(mu=4562, std=5337) (us), usrCpu(mu=1662, std=1306) (us), sysCpu(mu=1558, std=1286) (us)
+                                Total Time Used for decoding the whole seq:wall=38596(ms), usr_cpu=11126(ms), sys_cpu=21022(ms)
+FFMPEG500 encName=h264_nvmpi, PerFrameStatistics frmCnt=452, wall(mu=6029, std=4974) (us), usrCpu(mu=1753, std=1222) (us), sysCpu(mu=1637, std=1230) (us)
+                                Total Time Used for decoding the whole seq:wall=5222(ms), usr_cpu=1403(ms), sys_cpu=1564(ms)
+
+FFMPEG4400 encName=libx265 : has isuue
+FFMPEG4400 encName=h265_nvmpi : could not find encoder
+
+gst4400 encName=nvv4l2h264enc, PerFrameStatistics frmCnt=4138, wall(mu=5314, std=3558) (us), usrCpu(mu=1673, std=2137) (us), sysCpu(mu=2566, std=2157) (us)
+                                    Total Time Used for decoding the whole seq:wall=67418(ms), usr_cpu=24796(ms), sys_cpu=28479(ms)
+
+gst500 encName=nvv4l2h264enc, PerFrameStatistics frmCnt=433, wall(mu=5987, std=3384) (us), usrCpu(mu=1812, std=2214) (us), sysCpu(mu=3010, std=1941) (us)
+                                Total Time Used for decoding the whole seq:wall=8571(ms), usr_cpu=3154(ms), sys_cpu=3593(ms)
+
+gst4400 encName=nvv4l2h265enc, PerFrameStatistics frmCnt=4017, wall(mu=6110, std=3978) (us), usrCpu(mu=2123, std=2281) (us), sysCpu(mu=2888, std=2495) (us)
+                                    Total Time Used for decoding the whole seq:wall=64709(ms), usr_cpu=24057(ms), sys_cpu=28090(ms)
+
+gst500 encName=nvv4l2h265enc, PerFrameStatistics frmCnt=404, wall(mu=5692, std=3709) (us), usrCpu(mu=2602, std=2465) (us), sysCpu(mu=2431, std=2316) (us)
+                                Total Time Used for decoding the whole seq:wall=6860(ms), usr_cpu=3063(ms), sys_cpu=2634(ms)
+
+
+B.	Decoding
+gst4400 decName=gst-nvv4l2decoder h264 parser, PerFrameStatistics frmCnt=4315, wall(mu=17225, std=4764) (us), usrCpu(mu=711, std=490) (us), sysCpu(mu=701, std=475) (us)
+                                Total Time Used for decoding the whole seq:wall=148405(ms), usr_cpu=12084(ms), sys_cpu=18314(ms)
+
+gst4400 decName=gst-nvv4l2decoder H265 parser, PerFrameStatistics frmCnt=4318, wall(mu=16555, std=4356) (us), usrCpu(mu=746, std=528) (us), sysCpu(mu=774, std=514) (us)
+                                Total Time Used for decoding the whole seq:wall=148390(ms), usr_cpu=11892(ms), sys_cpu=18766(ms)
+
+Q: there is no parameter settings for choosing decoder in FFMEPG, seems it automatically picks up one based on the contents of the input video file. How to force it use a particular decoder? 
+FFMPEG4400 decFileName=./ffmpeg-h264_nvmpi.ts, PerFrameStatistics:  frmCnt=4379, wall(mu=15515, std=5783) (us), usrCpu(mu=14768, std=5794) (us), sysCpu(mu=540, std=695) (us)
+                                Total Time Used for decoding the whole seq:wall=106036(ms), usr_cpu=70978(ms), sys_cpu=33089(ms)
+
+FFMPEG4400 decFileName=./ffmpeg-libx264.ts, PerFrameStatistics:  frmCnt=4366, wall(mu=16087, std=6451) (us), usrCpu(mu=15306, std=6404) (us), sysCpu(mu=515, std=684) (us)
+                                Total Time Used for decoding the whole seq:wall=104736(ms), usr_cpu=72743(ms), sys_cpu=29966(ms)

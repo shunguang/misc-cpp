@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <PROJ_INC>$(APP_SRC);$(GTEST_INC);$(CV_INC);$(BOOST_INC)/</PROJ_INC>
+    <PROJ_LIB>$(APP_BUILD_BIN)\$(Configuration);$(GTEST_LIB);$(CV_LIB);$(BOOST_LIB)</PROJ_LIB>
+	<APP_LIBS_D>libMat.lib;libUtil.lib;gtestd.lib;gtest_maind.lib;opencv_world411d.lib;opencv_img_hash411d.lib;msvcrtd.lib</APP_LIBS_D>
+	<APP_LIBS_R>libRun.lib;libUtil.lib;gtestd.lib;gtest_maind.lib;opencv_world411.lib;opencv_img_hash411.lib;msvcrt.lib</APP_LIBS_R>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(APP_BUILD_BIN)\$(Configuration)\</OutDir>
+    <IntDir>$(APP_BUILD_INT)\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PROJ_INC);</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(PROJ_LIB);</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="APP_SRC">
+      <Value>$(APP_SRC)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PROJ_INC">
+      <Value>$(PROJ_INC)</Value>
+    </BuildMacro>
+    <BuildMacro Include="APP_BUILD_INT">
+      <Value>$(APP_BUILD_INT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="APP_BUILD_BIN">
+      <Value>$(APP_BUILD_BIN)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PROJ_LIB">
+      <Value>$(PROJ_LIB)</Value>
+    </BuildMacro>
+    <BuildMacro Include="APP_LIBS_D">
+      <Value>$(APP_LIBS_D)</Value>
+    </BuildMacro>
+    <BuildMacro Include="APP_LIBS_R">
+      <Value>$(APP_LIBS_R)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

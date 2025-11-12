@@ -1,0 +1,7 @@
+
+
+sudo date --set="15 Feb 2022 03:48:51 PM UTC"
+
+sudo chmod +777 /dev/ttyUS* /dev/ttyACM0
+
+

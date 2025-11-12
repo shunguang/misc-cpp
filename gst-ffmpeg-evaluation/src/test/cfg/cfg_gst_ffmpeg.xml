@@ -1,0 +1,51 @@
+<?xml version="1.i0" encoding="utf-8"?>
+<cfg>
+  <enc>
+    <imgW>1920</imgW>
+    <imgH>1080</imgH>
+    <!-- T0=tbn/tbd, FPS = tbd/tbn -->
+    <tbn>1001</tbn>
+    <tbd>30000</tbd>
+
+    <bitrate>9000000</bitrate>
+
+    <!--
+       Note: The gst-omx plugin is no longer supported in NVIDIA® Tegra® Linux 
+       Driver Package (now Jetson Linux) release 34.1. Use the gst-v4l2 plugin 
+       for development.
+    -->
+    
+    <!--gstEncNameId>
+          X264ENC=0,	OMXH264ENC=1,	NVH264ENC=2,	NVV4L2H264ENC=3,
+    			X265ENC=4,	OMXH265ENC=5,	NVH265ENC=6,	NVV4L2H265ENC=7	
+    </gstEncNameId-->
+    <gstEncNameId>3</gstEncNameId>   
+    <useVidCapFilterAfterEncoder>0</useVidCapFilterAfterEncoder>
+    
+    <!--ffmpegEncName>mpeg4, libx264, h264_nvmpi,libx265, h265_nvmpi</ffmpegEncName-->
+    <ffmpegEncName>h264_nvmpi</ffmpegEncName>
+    <inputKlvFile>./klv500.bin</inputKlvFile>
+    <inputYuvFile>./yuv500.bin</inputYuvFile>
+    <ouputFilePath>./</ouputFilePath>
+    <!--for debug purpose, 0 no output otherwise output at set frms-->
+    <nFrmsToPeekCpuTimeProfile>0</nFrmsToPeekCpuTimeProfile>
+  </enc>
+
+  <dec>
+    <imgW>1920</imgW>
+    <imgH>1080</imgH>
+
+    <!-- nvv4l2decoder, omxh264dec -->
+    <gstDecName>nvv4l2decoder</gstDecName>
+    <gstVidParser>265</gstVidParser>
+
+    <!--if donot have enough disk space or jsut want to have quick result set this field, set ALL to decode the all file -->
+    <maxNumOfFrms>ALL</maxNumOfFrms>
+    <!--inputFilePath>./gst-nvv4l2h265enc.ts, ./gst-nvv4l2h264enc.ts ffmpeg-h264_nvmpi.ts ffmpeg-libx264.ts</inputFilePath-->
+    <inputFilePath>./ffmpeg-libx264.ts</inputFilePath>
+    <outputKlvFile>./tmp-klv1.bin</outputKlvFile>
+    <outputYuvFile>./tmp-yuv1.bin</outputYuvFile>
+    <!--for debug purpose, 0 no output otherwise output at set frms-->
+    <nFrmsToPeekCpuTimeProfile>1000</nFrmsToPeekCpuTimeProfile>
+  </dec>
+</cfg>
