@@ -51,8 +51,12 @@ log*.txt
 #--------------------------
 #folders to ignore
 #--------------------------
-build-vs2019-x64/
+**/build-vs2019-x64/
+**/Release
+**/Debug
+**/x64
 data/
+
 
 
 
