@@ -40,8 +40,10 @@ Some utils to start a cpp application
     build:utilCpp/vs2019
           utilCpp/makeFiles
 		  
-	
-		  
-		  
+## stereo camera calibration
+Calibrate both intrinsic and extrinsic parameters of stereo cameras
 
+    code: stereoCamCali/src
+    build: stereoCamCali/src/vs2019
+		  
 ## Todo
